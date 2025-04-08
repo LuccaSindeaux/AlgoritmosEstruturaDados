@@ -9,7 +9,7 @@ class TelaCarro (TelaVeiculo):
         super().__init__(titulo) #função super() afirma que o init da superclasse será a mesma da declarada de quem ela herda. Neste caso, a classe TelaCarro recebe os mesmos parâmateros e funções de TelaVeiculo
         self.setGeometry(450, 150, 300, 300)
 
-    def definirLayout(self): # estou redefinindo uma função que já existe e herdei de TelaVeiculo,o nome disto é POLIMORFISMO: o ato de alterar funções de classes herdadas, mas mantendo outras comooriginalmente são.
+    def definirLayout(self): # estou redefinindo uma função que já existe e herdei de TelaVeiculo,o nome disto é POLIMORFISMO: o ato de alterar funções de classes herdadas, mas mantendo outras comoo riginalmente são.
         super().definirLayout()
         self.lblPortas = QLabel("Quantidade de portas: ")
         self.txtPortas = QLineEdit(self) #QLineEdit recebe somente o que a própria classe recebe, por isto self
