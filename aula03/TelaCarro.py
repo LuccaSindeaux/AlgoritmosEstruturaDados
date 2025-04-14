@@ -1,5 +1,8 @@
 import sys 
 from PyQt5.QtWidgets import *
+from Carro import Carro
+from TelaVeiculo import TelaVeiculo
+
 
 from TelaVeiculo import TelaVeiculo
 from Carro import Carro
