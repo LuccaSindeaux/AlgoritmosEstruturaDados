@@ -8,13 +8,12 @@ class Produto(ABC):
         self.categoria = categoria
     
 
-    @property
     def getInformacoes(self):
         infos = f'''
             Modelo: {self.modelo}.
             Cor: {self.cor}.
             Preço: {self.preco}.
-            Categoria: {self.categoria}.
+            Categoria: {self.categoria.nome}.
         '''
         return infos
 
