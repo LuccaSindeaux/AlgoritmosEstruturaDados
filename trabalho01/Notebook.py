@@ -19,19 +19,3 @@ class Notebook(Produto):
     def cadastrar(self):
         print("Notebook cadastrado!")
         print(self.getInformacoes())
-
-    # def cadastrar(self):
-    #     self.modelo = input("Digite o modelo: ")
-    #     self.cor = input("Digite o cor: ")
-    #     self.preco = input("Digite o preco: ")
-    #     self.categoria = input("Digite o categoria: ")
-    #     self.__tempoDeBateria = input("Digite quantos minutos dura a bateria: ")
-
-    
-    # @__tempoDeBateria.setter
-    # def __tempoDeBateria(self, valor):
-    #     self.__tempoDeBateria = valor       
-
-    # @property
-    # def getInformacoes(self):
-    #     return super().getInformacoes + f"\nTempo de bateria: {self.__tempoDeBateria} minutos."

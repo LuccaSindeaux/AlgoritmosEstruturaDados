@@ -18,14 +18,3 @@ class Desktop(Produto):
     def cadastrar(self):
         print("Desktop cadastrado!")
         print(self.getInformacoes())
-
-# def cadastrar(self) -> str:
-#     self.modelo = input("Digite o modelo: ")
-#     self.cor = input("Digite a cor: ")
-#     self.preco = input("Digite o preco: ")
-#     self.categoria = input("Digite a categoria: ")
-#     self._potenciaDaFonte = input("Digite a potência da fonte: ")     
-    
-#     @property
-#     def getInformacoes(self):
-#         return super().getInformacoes + f"\nPotência da fonte: {self._potenciaDaFonte} wats."
