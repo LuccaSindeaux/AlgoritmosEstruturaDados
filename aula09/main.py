@@ -1,7 +1,16 @@
-from ListaEncadeada import ListaEncadeada
+from listaEncadeadaOrdenada import ListaEncadeadaOrdenada
+from listaDuplamenteEncadeada import ListaDuplamenteEncadeada
 
-lista = ListaEncadeada()
+lista = ListaEncadeadaOrdenada()
 
-lista.addNoInicio("Lucca")
-lista.addNoFim("Lisiane")
-lista.addNoInicio("Butiá")
+lista.add("Gugu")
+lista.add("Cleber")
+lista.add("Murilin")
+lista.add("Adalto")
+lista.add("Butiá")
+lista.add("Lisiane")
+lista.add("Eu")
+
+# Testando o remover
+lista.remover("Eu")
+lista.remover("Capivara")

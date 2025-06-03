@@ -14,7 +14,7 @@ class ListaEncadeada:
     def addNoFim(self, valor):
         nodo = No(valor)
         if self.inicio is None: # Se minha lista estiver vazia
-            self.inicio = nodo # O incicio será o nó
+            self.inicio = nodo # O inicio será o nó
         elif self.inicio.prox is None: # se existir o próximo elemento depois do inicio for nulo (lista só tem um elemento)
             self.inicio.prox = nodo # o próximo elemento do início receberá o nó
         else:
@@ -23,16 +23,6 @@ class ListaEncadeada:
                 aux = aux.prox # navegará toda a lista
             aux.prox = nodo # quando chegar no último elemento, o próximo elemento depois do último será o nó declarado
         self.imprimir()
-
-    def imprimir(self):
-        print("-" * 20)
-        if self.inicio == None:
-            print("Lista encadeada vazia")
-        else:
-            aux = self.inicio
-            while aux.prox: 
-                print(aux.dado) # printavo dado auxiliar
-                aux = aux.prox # Vai pro próximo, repete o laço
 
     def removerDoInicio(self):
         if self.inicio is not None:
@@ -53,6 +43,17 @@ class ListaEncadeada:
                 ant.prox - None
             print("Elemento removido")
         self.imprimir()
+
+
+    def imprimir(self):
+        print("-" * 20)
+        if self.inicio == None:
+            print("Lista encadeada vazia")
+        else:
+            aux = self.inicio
+            while aux != None: 
+                print(aux.dado) # printa o dado auxiliar
+                aux = aux.prox # Vai pro próximo, repete o laço
             
 
 
