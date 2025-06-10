@@ -13,4 +13,5 @@ class ListaDuplamenteEncadeada():
             nodo.prox = self.inicio
             self.inicio = nodo
         else:
+            return valor # terminar
             
