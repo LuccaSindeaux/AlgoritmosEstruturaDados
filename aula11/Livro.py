@@ -4,4 +4,4 @@ class Livro:
         self.titulo = titulo
         self.autor = autor
         self.paginas = paginas
-        
+        self.prox = None
