@@ -1,56 +1,43 @@
-from Autor import Autor 
+from Autor import Autor
 
-class ListaEncAutor:
-    def __init__ (self):
-        self.inicio: None
-    
-    def addInicio(self, valor):
-        autor = Autor(valor)
-        if self.inicio != None:
-            autor.prox = self.inicio
-        self.inicio = autor
-        self.imprimir()
-    
-    def addFim(self, valor):
-        autor = Autor(valor)
-        if self.inicio == None:
-            self.inicio = autor
-        elif self.inicio.prox == None:
-            self.inicio.prox = autor
+class ListaAutores:
+    def __init__(self):
+        self.inicio = None
+
+    def adicionar_autor_ordenado(self, nome, nacionalidade):
+        novo_autor = Autor(nome, nacionalidade)
+
+        # Caso 1: A lista está vazia ou o novo autor vem antes do primeiro
+        if self.inicio is None or novo_autor.nome < self.inicio.nome:
+            novo_autor.prox = self.inicio
+            self.inicio = novo_autor
         else:
+            # Caso 2: Percorrer a lista para achar a posição correta
             aux = self.inicio
-            while aux.prox:
+            while aux.prox is not None and novo_autor.nome > aux.prox.nome:
                 aux = aux.prox
-            aux.prox = autor
-        self.imprimir()
-    
-    def removeInicio(self):
-        if self.inicio == None:
-            self.inicio = self.inicio.prox
-            print("Elemento removido.")
-        self.imprimir()
+            
+            novo_autor.prox = aux.prox
+            aux.prox = novo_autor
+        
+        print(f"Autor '{nome}' adicionado com sucesso!")
 
-    def removeFim(self):
-        if self.inicio != None:
-            if self.inicio.prox == None:
-                self.inicio = None
-            else:
-                ant = self.inicio
-                aux = self.inicio.prox
-                while aux.prox:
-                    ant = aux
-                    aux = aux.prox
-                ant.prox = None
-            print("Elemento removido.")
-        self.imprimir()
-    
+    def buscar_autor(self, nome_autor):
+        aux = self.inicio
+        while aux is not None:
+            if aux.nome.lower() == nome_autor.lower():
+                return aux 
+            aux = aux.prox
+        return None
+
     def imprimir(self):
-        print("-" * 40)
-        if self.inicio == None:
-            print("Lista encadeada de autores:")
-        else:
-            aux = self.inicio
-            while aux != None:
-                print(f'''Autor; ${aux.autor}\nNacionalidade: ${aux.nacionalidade}''') #mudar
-                aux = aux.prox
-
+        print("\n--- Lista de Autores Cadastrados ---")
+        if self.inicio is None:
+            print("Nenhum autor cadastrado.")
+            return
+            
+        aux = self.inicio
+        while aux is not None:
+            print(f"Nome: {aux.nome}, Nacionalidade: {aux.nacionalidade}")
+            aux = aux.prox
+        print("------------------------------------")
