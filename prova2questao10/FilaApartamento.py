@@ -36,4 +36,4 @@ class FilaApartamento:
             self.inicio = self.inicio.prox
             if self.inicio == None:
                 self.fim = None
-            print(f"Apartamento {self.inicio.numero} receberá a vaga {self.inicio.vaga} na garagem.")
+            print(f"Apartamento removido, próximo da fila: AP {self.inicio.numero} esperando a vaga {self.inicio.vaga}.")
